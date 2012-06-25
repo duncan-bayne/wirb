@@ -26,13 +26,17 @@ In a new shell, fire up the client, and redefine the hello method on Application
 
     duncan@duncan-laptop ~/wirb $ ruby client.rb
     Enter your Ruby commands, finishing with a double-newline.
+    Meta-commands are prefixed with :.  Try :help or :quit.
      
-    class Application
+    > class Application
       def hello
         "Redefined!"
       end
     end
-
+     
+     
+     
+    > 
 
 Refreshing http://localhost:4567/hi, the following text is now served:
 

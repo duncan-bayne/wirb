@@ -7,6 +7,7 @@ $/ = "\n\n"
 
 def welcome
   puts "Enter your Ruby commands, finishing with a double-newline."
+  puts "Meta-commands are prefixed with :.  Try :help or :quit."
 end
 
 def run_remote uri, command
@@ -19,6 +20,7 @@ def wirb_command command
     exit 0
   when ':help'
     puts ":quit\tExits wirb"
+    puts ":help\tDisplays help"
   else
     puts "wirb: unknown command #{command}"
   end
@@ -26,7 +28,7 @@ end
 
 welcome
 while true
-  puts
+  print "\n> "
   command = STDIN.gets.strip
   if command.start_with? ':'
     wirb_command command
