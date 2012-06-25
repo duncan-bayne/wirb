@@ -34,10 +34,24 @@ In a new shell, fire up the client, and redefine the hello method on Application
       end
     end
      
-     
-     
-    > 
-
 Refreshing http://localhost:4567/hi, the following text is now served:
 
     Redefined!
+
+Now let's add an entirely new route to the app (making a mistake along the way, which demonstrates rudimentary error handling):
+
+    > get '/bye'
+      "Goodbye cruel world!"
+    end
+     
+    (eval):3: syntax error, unexpected keyword_end, expecting $end
+     
+    > get '/bye' do
+      "Goodbye cruel world!"
+    end
+     
+    [/^\/bye$/, [], [], #<Proc:0x00000000fdec88@/home/duncan/.rvm/gems/ruby-1.9.3-p194/gems/sinatra-1.3.2/lib/sinatra/base.rb:1212>]
+
+... and sure enough, at http://localhost:4567/bye there is:
+
+    Goodbye cruel world!
